@@ -704,20 +704,186 @@ a:focus-visible,
   }
 }
 
+/* ── Mobile & Small Screens (≤759px) ─────────────────────── */
+
 @media (max-width: 759px) {
+  /* Content container: full bleed with small gutters */
   .app-content {
-    width: min(100%, calc(100% - 1rem));
+    width: min(100%, calc(100% - 1.25rem));
+    padding: 1rem 0 2.5rem;
   }
 
-  .topbar,
-  .panel-header-inline,
+  /* Topbar: keep horizontal, allow wrap if extremely narrow */
+  .topbar {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+  }
+
+  /* Brand name: slightly smaller on phone */
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  /* Topbar actions stay in a row, shrink buttons slightly */
+  .topbar-actions {
+    gap: 0.45rem;
+    margin-left: auto;
+  }
+
+  .theme-toggle,
+  .profile-btn {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  /* Hero: tighter margins */
+  .hero {
+    margin-bottom: 0.75rem;
+    padding: 0.25rem 0 0.1rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.45rem, 6vw, 2rem);
+  }
+
+  .hero-copy {
+    font-size: 0.92rem;
+  }
+
+  /* Workspace grid: single column, tighter gap */
+  .workspace-grid {
+    gap: 0.75rem;
+  }
+
+  /* Panels: reduce padding on mobile */
+  .panel {
+    padding: 1.1rem;
+    border-radius: 1.2rem;
+  }
+
+  /* panel-header-inline: keep row but tighten */
+  .panel-header-inline {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  /* Ghost button (Remove) in header: compact */
+  .panel-header-inline .ghost-button {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Dropzone: comfortable touch area */
+  .dropzone {
+    min-height: 12rem;
+    padding: 1.75rem 1rem;
+    border-radius: 1.1rem;
+  }
+
+  /* Image preview shell: natural height on mobile */
+  .image-preview-shell {
+    aspect-ratio: 16 / 10;
+    height: auto !important;
+  }
+
+  .image-placeholder-shell {
+    min-height: 12rem;
+  }
+
+  /* detail-grid: single column on very small screens, 2-col on wider phones */
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* dimension-grid: stack on phone */
+  .dimension-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Field inputs: bigger touch targets */
+  .field select,
+  .field input[type="number"] {
+    padding: 1rem 1rem;
+  }
+
+  .field select {
+    padding-right: 3.1rem;
+  }
+
+  /* Progress section */
   .progress-meta {
-    align-items: flex-start;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.75rem;
+    align-items: center;
+  }
+
+  .status-badge {
+    font-size: 0.76rem;
+    padding: 0.4rem 0.7rem;
+  }
+
+  /* Primary button: full width, good touch target */
+  .primary-button {
+    min-height: 3rem;
+  }
+
+  /* Profile modal: fill most of screen on phone */
+  .profile-modal {
+    width: min(100%, calc(100% - 1.5rem));
+    padding: 1.35rem;
+    border-radius: 1.25rem;
+    max-height: 92vh;
+  }
+
+  /* Auth content already uses min(420px, calc(100% - 2rem)); it's fine */
+  .auth-panel {
+    padding: 1.5rem 1.25rem;
+    border-radius: 1.2rem;
+  }
+
+  /* Ambient blobs: smaller on phone to avoid overflow */
+  .ambient {
+    width: 18rem;
+    height: 18rem;
+    filter: blur(80px);
+  }
+}
+
+/* ── Extra-small phones (≤400px) ─────────────────────────── */
+
+@media (max-width: 400px) {
+  .topbar {
+    padding: 0.65rem 0.85rem;
+  }
+
+  .brand-name {
+    font-size: 0.92rem;
+    letter-spacing: 0.12em;
+  }
+
+  .theme-toggle,
+  .profile-btn {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .panel {
+    padding: 0.95rem;
   }
 
   .dropzone {
-    min-height: 15rem;
+    min-height: 10rem;
+    padding: 1.5rem 0.85rem;
+  }
+
+  .auth-panel {
+    padding: 1.25rem 1rem;
   }
 }
 
