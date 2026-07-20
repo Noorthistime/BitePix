@@ -189,7 +189,7 @@ npm run dev -- --force
 This project is open source and available under the MIT License.
 
 ## Author
-Developed by: Fahad (Replicated for BitePix)
+Developed by: Noor Mohammad
 
 ## Support
 For issues and questions, please refer to the documentation or contact support.
