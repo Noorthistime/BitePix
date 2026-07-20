@@ -2,6 +2,7 @@
 A professional browser-based image converter web application for managing image format conversions, sizing, and quality adjustments securely on-device using React, TypeScript, and Vite.
 
 ## Project Structure
+```text
 BitePix/
 ├── src/
 │   ├── components/          # Reusable UI Components
@@ -32,6 +33,8 @@ BitePix/
 ├── playwright.config.ts     # Playwright Test Configuration
 ├── tsconfig.json            # TypeScript configuration
 └── vite.config.ts           # Vite Bundler configuration
+```
+
 
 ## Features
 ### 1. Authentication & User Management
